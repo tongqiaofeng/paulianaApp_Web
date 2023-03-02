@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.goods-list.data-v-108270a4 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.goods-list .goods-item.data-v-108270a4 {
+  font-family: "PingFang SC-Medium";
+  font-weight: 500;
+  margin-top: 50rpx;
+  width: 330rpx;
+}
+.goods-list .goods-item.data-v-108270a4:nth-of-type(1), .goods-list .goods-item.data-v-108270a4:nth-of-type(2) {
+  margin-top: 0;
+}
+.goods-list .goods-item .goods-cover-img.data-v-108270a4 {
+  width: 304rpx;
+  height: 304rpx;
+  overflow: hidden;
+  padding-left: 13rpx;
+}
+.goods-list .goods-item .goods-cover-img .goods-img.data-v-108270a4 {
+  width: 100%;
+  height: 100%;
+  border-radius: 4rpx;
+}
+.goods-list .goods-item .goods-name.data-v-108270a4 {
+  font-size: 28rpx;
+  color: #1f2033;
+  margin-top: 30rpx;
+  padding-left: 13rpx;
+}
+.goods-list .goods-item .discount-icon.data-v-108270a4 {
+  width: 76rpx;
+  height: 32rpx;
+  margin-top: 14rpx;
+  margin-bottom: 14rpx;
+  padding-left: 13rpx;
+}
+.goods-list .goods-item .goods-price.data-v-108270a4 {
+  font-size: 28rpx;
+  color: #55b8b8;
+  line-height: 28rpx;
+  padding-left: 13rpx;
+}
+.goods-list .goods-item .goods-price.data-v-108270a4::before {
+  content: "￥";
+  font-size: 28rpx;
+  color: #55b8b8;
+}
+.goods-list .goods-item .price.data-v-108270a4 {
+  font-size: 24rpx;
+  color: #55b8b8;
+  line-height: 24rpx;
+  padding-left: 13rpx;
+}
+.goods-list .goods-item .marginTop30.data-v-108270a4 {
+  margin-top: 30rpx;
+}
+

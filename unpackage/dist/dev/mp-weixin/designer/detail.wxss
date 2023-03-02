@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container .designer-box.data-v-544b5857 {
+  width: 100%;
+}
+.container .designer-box .head.data-v-544b5857 {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 60rpx;
+}
+.container .designer-box .head .design-img.data-v-544b5857 {
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+.container .designer-box .head .design-img.data-v-544b5857:first-child {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 120rpx;
+}
+.container .designer-box .head .design-img.data-v-544b5857:last-child {
+  margin-bottom: 0;
+}
+

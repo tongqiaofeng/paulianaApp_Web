@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品收藏",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F2F3F5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "slide-list": "/components/left-slide/left-slide-list"
+  }
+}

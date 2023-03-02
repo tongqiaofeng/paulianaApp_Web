@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.discount-coupop-container.data-v-2e0e1a28 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F3F5;
+}
+.discount-coupop-container .discount-coupop-nav.data-v-2e0e1a28 {
+  width: 100%;
+  height: 170rpx;
+  z-index: 99;
+  position: fixed;
+  align-items: center;
+  background-color: #fff;
+}
+.discount-coupop-container .discount-coupop-nav .tab-scroll.data-v-2e0e1a28 {
+  flex: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.discount-coupop-container .discount-coupop-nav .tab-scroll .tab-scroll_box.data-v-2e0e1a28 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+.discount-coupop-container .discount-coupop-nav .tab-scroll .tab-scroll_box .tab-scroll_item.data-v-2e0e1a28 {
+  flex-shrink: 0;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.discount-coupop-container .discount-coupop-nav .tab-scroll .tab-scroll_box .tab-scroll-filter_item.data-v-2e0e1a28 {
+  padding: 10rpx 30rpx;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 24rpx;
+  border-radius: 60rpx;
+  background-color: #F5F6F7;
+  border: 2rpx solid #F5F6F7;
+  box-sizing: border-box;
+}
+.discount-coupop-container .discount-coupop-nav .tab-filter-scroll.data-v-2e0e1a28 {
+  margin-top: 20rpx;
+}
+.discount-coupop-container .discount-coupop-nav .active.data-v-2e0e1a28 {
+  color: #55B8B8;
+  font-weight: bold;
+}
+.discount-coupop-container .discount-coupop-nav .filterActive.data-v-2e0e1a28 {
+  border: 2rpx solid #55B8B8 !important;
+  background-color: rgba(85, 184, 184, 0.3);
+  color: #55B8B8;
+  font-weight: bold;
+}
+.discount-coupop-container .discount-coupop-main.data-v-2e0e1a28 {
+  margin-top: 40rpx;
+  padding: 0 24rpx;
+  position: absolute;
+  top: 170rpx;
+  left: 0;
+  right: 0;
+  background-color: #F2F3F5;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio.data-v-2e0e1a28 {
+  margin-bottom: 24rpx;
+  display: flex;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left.data-v-2e0e1a28 {
+  width: 240rpx;
+  height: 224rpx;
+  position: relative;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left .left-img.data-v-2e0e1a28 {
+  width: 240rpx;
+  height: 224rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left .left-content.data-v-2e0e1a28 {
+  width: 240rpx;
+  height: 224rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left .left-content .content-price.data-v-2e0e1a28 {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left .left-content .content-condition.data-v-2e0e1a28 {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #fff;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-left .left-content .use-discount.data-v-2e0e1a28 {
+  margin-top: 20rpx;
+  padding: 8rpx 20rpx;
+  background-color: #fff;
+  border-radius: 60rpx;
+  font-size: 22rpx;
+  color: #55B8B8;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-right.data-v-2e0e1a28 {
+  flex: 1;
+  height: 224rpx;
+  padding-left: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 32rpx;
+  background-color: #fff;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-right .right-font .name.data-v-2e0e1a28 {
+  color: #171D26;
+  font-weight: 900;
+  font-size: 30rpx;
+}
+.discount-coupop-container .discount-coupop-main .main-content .discount-radio .radio-right .right-font .time.data-v-2e0e1a28 {
+  margin-top: 32rpx;
+  font-size: 22rpx;
+  color: #888D94;
+  font-weight: 500;
+}
+

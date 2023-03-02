@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.addr-add.data-v-616dbe2e {
+  height: 100vh;
+  background-color: #F2F3F5;
+}
+.addr-add .every-title.data-v-616dbe2e {
+  font-size: 28rpx;
+}
+.addr-add .addr-every.data-v-616dbe2e {
+  height: 80rpx;
+  margin-bottom: 2rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.addr-add .addr-every .city-sel.data-v-616dbe2e {
+  font-size: 28rpx;
+  color: #333;
+}
+.addr-add .addr-details.data-v-616dbe2e {
+  height: 120rpx;
+  margin-bottom: 2rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.addr-add .addr-details .city-sel.data-v-616dbe2e {
+  font-size: 28rpx;
+  color: #333;
+}
+.addr-add .button-bottom.data-v-616dbe2e {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.addr-add .button-bottom .addr-button.data-v-616dbe2e {
+  padding: 20rpx 80rpx;
+  font-size: 28rpx;
+  background-color: #55B8B8;
+  color: #fff;
+  border-radius: 60rpx;
+  text-align: center;
+}
+
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.addr-every .input-value-border {
+  border: none !important;
+}
+.addr-every .input-arrow {
+  width: 0 !important;
+  height: 0 !important;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+.addr-every .placeholder {
+  color: #c3c3c3 !important;
+}
+

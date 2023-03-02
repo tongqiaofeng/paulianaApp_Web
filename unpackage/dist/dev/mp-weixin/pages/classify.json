@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "分类",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "easy-loadimage": "/components/easy-loadimage/easy-loadimage"
+  }
+}

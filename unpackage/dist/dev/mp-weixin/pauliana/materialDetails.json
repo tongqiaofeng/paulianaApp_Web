@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "宝石详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-swiper-dot": "/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单列表",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F2F3F5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.img-class.data-v-2a183b29 {
+  width: 100%;
+  height: 100%;
+}
+.container.data-v-2a183b29 {
+  width: 100%;
+  padding-bottom: 60rpx;
+  position: relative;
+}
+.container .index-top.data-v-2a183b29 {
+  z-index: 999;
+}
+.container .search-bar-box.data-v-2a183b29 {
+  width: 690rpx;
+  height: 72rpx;
+  background: #f5f6f7;
+  border-radius: 8rpx;
+  opacity: 1;
+  margin: 20rpx auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.container .search-bar-box .search-icon.data-v-2a183b29 {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 32rpx;
+}
+.container .search-bar-box input.data-v-2a183b29 {
+  width: 100%;
+  padding-left: 88rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+}
+.container .search-bar-box .search-placeholder.data-v-2a183b29 {
+  color: #f5f6f7;
+  font-size: 28rpx;
+}
+.container .swiper-box.data-v-2a183b29 {
+  width: 100%;
+}
+.container .swiper-box .swiper-cover-item.data-v-2a183b29 {
+  width: 100%;
+  height: 424rpx;
+}
+.container .swiper-box .swiper-cover-item .swiper-item.data-v-2a183b29 {
+  width: 100%;
+  height: 100%;
+}
+.container .swiper-box .swiper-cover-item .swiper-activity-img.data-v-2a183b29 {
+  width: 100%;
+  height: 100%;
+}
+.container .brand-box.data-v-2a183b29 {
+  width: 100%;
+  margin-top: 40rpx;
+}
+.container .brand-box .brand-cover-img.data-v-2a183b29 {
+  width: 100%;
+}
+.container .series-box.data-v-2a183b29 {
+  width: 100%;
+}
+.container .series-box .series-item.data-v-2a183b29 {
+  width: 100%;
+  margin-top: 60rpx;
+}
+.container .series-box .series-item .series-head.data-v-2a183b29 {
+  widows: 100%;
+  height: 278rpx;
+}
+.container .series-box .series-item .series-main.data-v-2a183b29 {
+  width: 100%;
+  height: 706rpx;
+  position: relative;
+}
+.container .series-box .series-item .series-main .series-main-bg.data-v-2a183b29 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.container .series-box .series-item .series-main .series-content.data-v-2a183b29 {
+  position: relative;
+  z-index: 9;
+  margin-top: 20px;
+}
+.container .series-box .series-item .series-main .series-content .swiper-block.data-v-2a183b29 {
+  height: 706rpx;
+  width: 100%;
+}
+.container .series-box .series-item .series-main .series-content .swiper-item.data-v-2a183b29 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: unset;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 72rpx;
+}
+.container .series-box .series-item .series-main .series-content.data-v-2a183b29 .uni-swiper__dots-box {
+  bottom: 20px !important;
+}
+.container .series-box .series-item .series-main .series-content .slide-image.data-v-2a183b29 {
+  z-index: 1;
+  height: 512rpx;
+  width: 384rpx;
+}
+.container .series-box .series-item .series-main .series-content .active.data-v-2a183b29 {
+  -webkit-transform: scale(1.14);
+          transform: scale(1.14);
+  transition: all 0.3s ease-in 0s;
+  z-index: 20;
+}
+.container .recommend-goods-box.data-v-2a183b29 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.container .recommend-goods-box image.data-v-2a183b29 {
+  width: 322rpx;
+  height: 232rpx;
+}
+.container .discount-popup-container.data-v-2a183b29 {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(23, 29, 38, 0.8);
+}
+.container .discount-popup-container .discount-popup-main.data-v-2a183b29 {
+  width: 690rpx;
+  height: 850rpx;
+  position: relative;
+}
+.container .discount-popup-container .discount-popup-main .back01.data-v-2a183b29 {
+  width: 690rpx;
+  height: 850rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+.container .discount-popup-container .discount-popup-main .back02.data-v-2a183b29 {
+  width: 402rpx;
+  height: 102rpx;
+  position: absolute;
+  left: 144rpx;
+  right: 144rpx;
+  bottom: 36rpx;
+  z-index: 99;
+}
+.container .discount-popup-container .discount-popup-main .button-font.data-v-2a183b29 {
+  position: absolute;
+  left: 278rpx;
+  right: 278rpx;
+  bottom: 74rpx;
+  z-index: 999;
+  font-size: 32rpx;
+  color: #4aa5a5;
+}
+.container .discount-popup-container .discount-popup-close.data-v-2a183b29 {
+  margin-top: 64rpx;
+}
+.container .discount-popup-container .discount-popup-close image.data-v-2a183b29 {
+  width: 68rpx;
+  height: 68rpx;
+}
+

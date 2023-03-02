@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "编辑收货地址",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F2F3F5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-data-picker": "/uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker"
+  }
+}

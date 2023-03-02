@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container.data-v-51c1957b {
+  width: 100%;
+  padding-bottom: 60rpx;
+}
+.container .recommend-goods-box.data-v-51c1957b {
+  width: 100%;
+  padding: 0 30rpx;
+  margin-top: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "活动商品",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "goods-list": "/components/goods-list/goods-list"
+  }
+}

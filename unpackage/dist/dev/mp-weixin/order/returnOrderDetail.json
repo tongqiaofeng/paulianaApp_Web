@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "退货退款详情",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#85DBDB",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-steps": "/uni_modules/uni-steps/components/uni-steps/uni-steps"
+  }
+}

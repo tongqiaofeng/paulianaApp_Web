@@ -1,0 +1,1 @@
+<view class="container data-v-51c1957b"><view class="recommend-goods-box data-v-51c1957b"><goods-list vue-id="331cca2a-1" scrollTop="{{scrollTop}}" goodsList="{{recList}}" class="data-v-51c1957b" bind:__l="__l"></goods-list><block wx:if="{{loadStatus}}"><text class="font-tip data-v-51c1957b">没有更多了!</text></block></view></view>

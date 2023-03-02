@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.admin-post-job-main .commoditybox.data-v-718ce697 {
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+}
+.admin-post-job-main .commoditybox .box-left.data-v-718ce697 {
+  padding-top: 23rpx;
+  margin-right: 30rpx;
+}
+.admin-post-job-main .commoditybox .box-left image.data-v-718ce697 {
+  width: 210rpx;
+  height: 210rpx;
+}
+.admin-post-job-main .commoditybox .box-right.data-v-718ce697 {
+  padding: 61rpx 24rpx 61rpx 0;
+  flex: 1;
+}
+.admin-post-job-main .commoditybox .box-right .name.data-v-718ce697 {
+  width: 400rpx;
+  font-size: 28rpx;
+  color: #03314B;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.admin-post-job-main .commoditybox .box-right .price.data-v-718ce697 {
+  margin-top: 30rpx;
+  display: flex;
+  align-items: baseline;
+  color: #1ECC99;
+  font-size: 32rpx;
+  font-weight: normal;
+}
+.admin-post-job-main .commoditybox .box-right .price .currency.data-v-718ce697 {
+  margin-right: 3rpx;
+  font-size: 22rpx;
+  font-weight: bold;
+}
+.admin-post-job-main .commoditybox .closeicon.data-v-718ce697 {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  color: #ef5b5b;
+  font-size: 28rpx;
+}
+.admin-post-job-main .commoditybox .closeicon image.data-v-718ce697 {
+  width: 124rpx;
+  height: 103rpx;
+}
+.admin-post-job-main .commoditybox .delIcon.data-v-718ce697 {
+  position: absolute;
+  top: 20rpx;
+  right: -20rpx;
+  color: #ef5b5b;
+  font-size: 28rpx;
+}
+.admin-post-job-main .commoditybox .delIcon image.data-v-718ce697 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.item-container.data-v-718ce697 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+}
+.option-box.data-v-718ce697 {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+.option-box .option-item.data-v-718ce697 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+

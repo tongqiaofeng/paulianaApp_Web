@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.addr-admin.data-v-bc4b0d0c {
+  height: 100vh;
+  padding: 0 24rpx;
+  background-color: #F2F3F5;
+}
+.addr-admin .addr-container.data-v-bc4b0d0c {
+  padding: 0 26rpx 50rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.addr-admin .addr-container .addr-every.data-v-bc4b0d0c {
+  padding-top: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.addr-admin .addr-container .addr-every .every-left.data-v-bc4b0d0c {
+  flex: 1;
+}
+.addr-admin .addr-container .addr-every .every-left .left-top .default-sign.data-v-bc4b0d0c {
+  margin-right: 10rpx;
+  padding: 2rpx 4rpx;
+  color: #fff;
+  background-color: #55B8B8;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+}
+.addr-admin .addr-container .addr-every .every-left .left-top .addr-name.data-v-bc4b0d0c {
+  color: #000;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.addr-admin .addr-container .addr-every .every-left .left-top .addr-phone.data-v-bc4b0d0c {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.addr-admin .addr-container .addr-every .every-left .left-bottom.data-v-bc4b0d0c {
+  margin-top: 22rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+.addr-admin .addr-container .addr-every .every-right.data-v-bc4b0d0c {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.addr-admin .addr-container .addr-every .every-right image.data-v-bc4b0d0c {
+  width: 23rpx;
+  height: 24rpx;
+}
+.addr-admin .addr-button.data-v-bc4b0d0c {
+  height: 80rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background-color: #55B8B8;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+

@@ -1,0 +1,1 @@
+<view class="container data-v-544b5857"><view class="designer-box data-v-544b5857"><block wx:if="{{$root.g0}}"><view class="head data-v-544b5857"><block wx:for="{{imgList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><image class="design-img data-v-544b5857" src="{{apiHost+'/file/'+item}}" mode="widthFix"></image></block></view></block></view></view>

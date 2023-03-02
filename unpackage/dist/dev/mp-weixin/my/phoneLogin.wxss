@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.phone-login-container .wechat-login-popup-container.data-v-4d0ce940 {
+  padding: 140rpx 30rpx 100rpx;
+  text-align: center;
+}
+.phone-login-container .wechat-login-popup-container .login-logo.data-v-4d0ce940 {
+  width: 403rpx;
+  height: 121rpx;
+}
+.phone-login-container .wechat-login-popup-container .login-title.data-v-4d0ce940 {
+  margin-top: 124rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #171d26;
+}
+.phone-login-container .wechat-login-popup-container .login-slogan.data-v-4d0ce940 {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #505459;
+}
+.phone-login-container .wechat-login-popup-container .login-button.data-v-4d0ce940 {
+  margin-top: 90rpx;
+}
+.phone-login-container .wechat-login-popup-container .login-button button.data-v-4d0ce940 {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #55b8b8;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 0;
+  border: none;
+}
+

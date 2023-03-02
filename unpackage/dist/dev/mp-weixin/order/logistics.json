@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "物流详情",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F2F3F5",
+  "usingComponents": {
+    "timeline": "/components/chenbin-timeline/timeLine",
+    "timeline-item": "/components/chenbin-timeline/timelineItem"
+  }
+}

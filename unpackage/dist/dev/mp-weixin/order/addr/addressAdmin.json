@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F2F3F5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

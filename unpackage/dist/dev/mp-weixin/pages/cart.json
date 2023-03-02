@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "购物车",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "easy-loadimage": "/components/easy-loadimage/easy-loadimage",
+    "goods-list": "/components/goods-list/goods-list"
+  }
+}

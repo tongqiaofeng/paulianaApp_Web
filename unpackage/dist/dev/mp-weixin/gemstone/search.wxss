@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container.data-v-2d05c1c3 {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.container .search-bar-box.data-v-2d05c1c3 {
+  width: 100%;
+  padding-top: 20rpx;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9;
+}
+.container .search-bar-box .box-search.data-v-2d05c1c3 {
+  height: 72rpx;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+.container .search-bar-box .search-icon.data-v-2d05c1c3 {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 54rpx;
+}
+.container .search-bar-box input.data-v-2d05c1c3 {
+  width: 690rpx;
+  height: inherit;
+  background: #f5f6f7;
+  padding-left: 88rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+  border-radius: 8rpx;
+}
+.container .search-bar-box .del-icon.data-v-2d05c1c3 {
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 62rpx;
+  z-index: 9;
+}
+.container .search-bar-box .search-placeholder.data-v-2d05c1c3 {
+  color: #f5f6f7;
+  font-size: 28rpx;
+}
+.container .search-bar-box .search-tip.data-v-2d05c1c3 {
+  width: 76rpx;
+  display: inline-block;
+  text-align: right;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  font-family: "PingFang SC-Medium";
+  font-weight: 500;
+  color: #171d26;
+}
+.container .search-bar-box .navbar-list.data-v-2d05c1c3 {
+  width: 100%;
+  padding: 48rpx 78rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.container .search-bar-box .navbar-list .navbar-tip.data-v-2d05c1c3 {
+  font-size: 28rpx;
+  font-family: "PingFang SC-Medium";
+  font-weight: 500;
+  color: #505459;
+  line-height: 28rpx;
+  display: inline-flex;
+  align-items: center;
+}
+.container .search-bar-box .navbar-list .navbar-active.data-v-2d05c1c3 {
+  color: #55b8b8;
+  font-weight: bold;
+}
+.container .search-bar-box .navbar-list .price-sort-icon.data-v-2d05c1c3 {
+  width: 16rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+}
+.container .search-bar-box .navbar-list .filter-icon.data-v-2d05c1c3 {
+  width: 24rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+}
+.container .goods-scroll.data-v-2d05c1c3 {
+  position: fixed;
+  overflow-y: scroll;
+  height: 100%;
+}
+.container .goods-scroll .goods-box.data-v-2d05c1c3 {
+  width: 100%;
+  padding: 0 30rpx 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.container .popup-content.data-v-2d05c1c3 {
+  width: 100%;
+  padding-top: 60rpx;
+  padding-bottom: 60rpx;
+  background-color: #fff;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+}
+.container .popup-content .popup-title.data-v-2d05c1c3 {
+  margin-bottom: 80rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.container .popup-content .gemstone-list.data-v-2d05c1c3 {
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 220rpx);
+  grid-gap: 20rpx;
+}
+.container .popup-content .gemstone-list .gemstone-option.data-v-2d05c1c3 {
+  height: 66rpx;
+  padding: 0 20rpx;
+  margin-bottom: 28rpx;
+  background-color: #f5f6f7;
+  border-radius: 38rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  color: #171d26;
+  line-height: 66rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.container .popup-content .gemstone-list .gemstone-option.active.data-v-2d05c1c3 {
+  border: 2rpx solid #55b8b8;
+  background-color: rgba(85, 184, 184, 0.3);
+  color: #fff;
+}
+.container .popup-content .filter-btn.data-v-2d05c1c3 {
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #55b8b8;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin: 32rpx auto;
+}
+

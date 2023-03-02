@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "宝石查询",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "header-top": "/components/header-top/header-top",
+    "goods-list": "/components/goods-list/goods-list"
+  }
+}

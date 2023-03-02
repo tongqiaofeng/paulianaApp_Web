@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/classify",
+    "pages/customization",
+    "pages/cart",
+    "pages/mine"
+  ],
+  "subPackages": [
+    {
+      "root": "order",
+      "pages": [
+        "confirmAnOrder",
+        "orderList",
+        "orderDetail",
+        "returnOrder",
+        "returnOrderDetail",
+        "returnType",
+        "priceAndProduct",
+        "logistics",
+        "addr/addressAdmin",
+        "addr/addressUpdate",
+        "addr/addressAdd"
+      ]
+    },
+    {
+      "root": "my",
+      "pages": [
+        "collectGoods",
+        "integral",
+        "discountCoupon",
+        "getUserMsg",
+        "phoneLogin"
+      ]
+    },
+    {
+      "root": "pauliana",
+      "pages": [
+        "jewelryDetails",
+        "materialDetails",
+        "search",
+        "brandDetails",
+        "activitiesGoods"
+      ]
+    },
+    {
+      "root": "gemstone",
+      "pages": [
+        "search",
+        "customization-detail"
+      ]
+    },
+    {
+      "root": "designer",
+      "pages": [
+        "detail",
+        "search"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F2F3F5",
+    "backgroundColor": "#F2F3F5"
+  },
+  "tabBar": {
+    "color": "#81868C",
+    "selectedColor": "#55B8B8",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "text": "首页",
+        "iconPath": "static/imgs/tabBar/index.png",
+        "selectedIconPath": "static/imgs/tabBar/index01.png"
+      },
+      {
+        "pagePath": "pages/classify",
+        "text": "商品分类",
+        "iconPath": "static/imgs/tabBar/classify.png",
+        "selectedIconPath": "static/imgs/tabBar/classify01.png"
+      },
+      {
+        "pagePath": "pages/customization",
+        "text": "专属定制",
+        "iconPath": "static/imgs/tabBar/customized.png",
+        "selectedIconPath": "static/imgs/tabBar/customized01.png"
+      },
+      {
+        "pagePath": "pages/cart",
+        "text": "购物车",
+        "iconPath": "static/imgs/tabBar/cart.png",
+        "selectedIconPath": "static/imgs/tabBar/cart01.png"
+      },
+      {
+        "pagePath": "pages/mine",
+        "text": "个人中心",
+        "iconPath": "static/imgs/tabBar/mine.png",
+        "selectedIconPath": "static/imgs/tabBar/mine01.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
