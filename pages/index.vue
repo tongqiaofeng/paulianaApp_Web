@@ -50,7 +50,7 @@
 							:key="index1"
 							@click.stop="goRelationType(item, item1)"
 						>
-							<view class="swiper-item" @click="goSearchResult(item1.jumpUrl)">
+							<view class="swiper-item">
 								<image
 									class="swiper-activity-img"
 									:src="apiHost + '/file/' + item1.imgUrl"
@@ -415,21 +415,21 @@ export default {
 		},
 
 		// 跳转关联 relationType 0 产品 1设计图 2自定义网址 3设计师
-		goRelationType(item, item1 = {}) {
-      if (item.relationType == 0 && item1.id) {
-        // 到产品
+		goRelationType(item = {}, item1 = {}) {
+			if (item.relationType == 0 && item1.id) {
+				// 到产品
 				uni.navigateTo({ url: `/pauliana/jewelryDetails?id=${item1.id}` });
-      } else if (item.relationType == 1 && item1.id) {
-        // 设计图
+			} else if (item.relationType == 1 && item1.id) {
+				// 设计图
 				uni.navigateTo({ url: `/designer/designDetails?id=${item1.id}` });
 			} else if (item.relationType == 2 && item1.jumpUrl) {
 				// 自定义网址
 				uni.navigateTo({ url: item1.jumpUrl });
-      } else if (item.relationType == 3) {
-        // 设计师
+			} else if (item.relationType == 3) {
+				// 设计师
 				let url = `${item1.jumpUrl}&designerImg=${encodeURIComponent(
 					JSON.stringify(item1.designerImg)
-        )}`;
+				)}`;
 				uni.navigateTo({
 					url: url,
 				});
