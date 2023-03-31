@@ -19,6 +19,7 @@
 					:focus="focusStatus"
 					placeholder-class="search-placeholder"
 					placeholder="名称/设计师/标签/设计理念"
+					@confirm="confirmSearch"
 				/>
 				<image
 					class="del-icon"
@@ -173,7 +174,8 @@ export default {
 				setTimeout(() => {
 					this.scrollTop++;
 				}, 500);
-				this.searchList = [...this.searchList, ...data.list];
+				if (this.currentPage == 1) this.searchList = data.list;
+				else this.searchList = [...this.searchList, ...data.list];
 			}
 		},
 
@@ -214,6 +216,7 @@ export default {
 		},
 		clearKeywords() {
 			this.keywords = '';
+			this.confirmSearch();
 		},
 		// 返回事件
 		goBack() {
@@ -253,7 +256,12 @@ export default {
 				url: '/designer/designDetails?id=' + id,
 			});
 		},
-
+		confirmSearch() {
+			this.currentPage = 1;
+			this.searchList = [];
+			this.loadStatus = false;
+			this.getSearchResult();
+		},
 		_resetSearchParams() {
 			this.currentPage = 1;
 			this.loadStatus = false;
@@ -275,13 +283,13 @@ export default {
 	},
 	watch: {
 		keywords(value) {
-			this.timer && clearTimeout(this.timer);
-			this.timer = setTimeout(() => {
-				this.currentPage = 1;
-				this.searchList = [];
-				this.loadStatus = false;
-				this.getSearchResult();
-			}, 200);
+			// this.timer && clearTimeout(this.timer);
+			// this.timer = setTimeout(() => {
+			// 	this.currentPage = 1;
+			// 	this.searchList = [];
+			// 	this.loadStatus = false;
+			// 	this.getSearchResult();
+			// }, 200);
 		},
 		searchStatus(value) {
 			if (!value) {

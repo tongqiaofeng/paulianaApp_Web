@@ -30,7 +30,7 @@
 
 		<view class="product-info">
 			<view class="name">{{ detailObj.name }}</view>
-			<view class="designer">设计师: {{ detailObj.designerName || '' }}</view>
+			<view class="designer">设计师: {{ detailObj.designerName || 'PAULIANA' }}</view>
 
 			<view class="label-wrap">
 				<text
@@ -42,7 +42,7 @@
 					>{{ label }}</text
 				>
 			</view>
-			<view class="desc">设计理念: {{ detailObj.designConcept }}</view>
+			<view v-if="detailObj.designConcept" class="desc">设计理念: {{ detailObj.designConcept }}</view>
 		</view>
 	</view>
 </template>

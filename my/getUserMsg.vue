@@ -8,9 +8,15 @@
 				<view class=""> 为提供优质服务，pauliana需要获取你的以下信息： </view>
 				<view class=""> 你的公开信息(头像、昵称等) </view>
 			</view>
-			<view class="login-button" @click="getUserLoginMsg">
+			<button class="login-button" open-type="getUserInfo" @getuserinfo="getUserLoginMsg">
 				授权获取信息
-			</view>
+			</button>
+			
+			<button class="avatar-wrapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
+			  <image class="avatar" :src="headPic"></image>
+			</button> 
+			<input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+			
 		</view>
 	</view>
 </template>
@@ -24,27 +30,46 @@
 			}
 		},
 		methods: {
+			onChooseAvatar(e) {
+			   this.headPic = e.detail.avatarUrl;
+			   console.log(e);
+			  },
 			// 获取临时登录凭证code
 			getUserLoginMsg() {
-				uni.getUserProfile({
-					desc: "登录",
-					success: (res) => {
-						console.log("用户头像、昵称", res);
-						this.nick = res.userInfo.nickName;
-						this.headPic = res.userInfo.avatarUrl;
 
-						uni.navigateTo({
-							url: "./phoneLogin?headPic=" + this.headPic + '&nick=' + this.nick
-						})
-					},
-					fail: (err) => {
-						console.log(err);
-						uni.showToast({
-							icon: "none",
-							title: "获取用户信息失败",
-						});
-					},
+				uni.login({
+				  provider: 'weixin',
+				  success: function (loginRes) {
+				    console.log(loginRes.authResult);
+				    // 获取用户信息
+				    uni.getUserInfo({
+				      provider: 'weixin',
+				      success: function (infoRes) {
+				        console.log('用户昵称为：' + infoRes.userInfo.nickName);
+				      }
+				    });
+				  }
 				});
+		
+				// uni.getUserProfile({
+				// 	desc: "登录",
+				// 	success: (res) => {
+				// 		console.log("用户头像、昵称", res);
+				// 		this.nick = res.userInfo.nickName;
+				// 		this.headPic = res.userInfo.avatarUrl;
+
+				// 		uni.navigateTo({
+				// 			url: "./phoneLogin?headPic=" + this.headPic + '&nick=' + this.nick
+				// 		})
+				// 	},
+				// 	fail: (err) => {
+				// 		console.log(err);
+				// 		uni.showToast({
+				// 			icon: "none",
+				// 			title: "获取用户信息失败",
+				// 		});
+				// 	},
+				// });
 			},
 		}
 	}

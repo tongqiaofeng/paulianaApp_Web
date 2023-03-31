@@ -657,7 +657,8 @@
 					},
 					fail: (err) => {
 						console.log("支付失败:");
-						console.log(err);
+            console.log(err);
+            uni.navigateTo({url: '/order/orderList'})
 						uni.showToast({
 							icon: "none",
 							title: "支付失败",

@@ -4,7 +4,10 @@ import App from './App';
 Vue.config.productionTip = false;
 
 // Vue.prototype.$baseUrl = 'http://192.168.0.164:8087/jewellery/wechat/api';
+// Vue.prototype.$baseMagageUrl = 'http://192.168.0.164:8086/app';
 Vue.prototype.$baseUrl = 'https://hk.wistechx.cn/JewelleryMallApi';
+Vue.prototype.$baseMagageUrl = 'https://hk.wistechx.cn/JewelleryStockApi';
+Vue.prototype.$baseImgUrl = 'https://hk.wistechx.cn/JewelleryMallApi';
 
 // 公共样式
 import './static/styles/common.scss';
@@ -16,7 +19,7 @@ Vue.prototype.checkBack = function (ret, bShwoTip = 1) {
 		if (ret.data.code == 400)
 			uni.showToast({
 				icon: 'none',
-				title: ret.data.message,
+				title: ret.data.data,
 				duration: 2000,
 			});
 		else if (ret.data.code == 300)
@@ -46,6 +49,8 @@ Vue.prototype.setUserInfo = function (ret) {
 	userInfo.userHeadPic = ret.data.headPic;
 	userInfo.phoneNumber = ret.data.phoneNumber;
 	userInfo.totalIntegral = ret.data.totalIntegral;
+	userInfo.authority = ret.data.authority;
+	userInfo.managerToken = ret.data.managerToken;
 
 	console.log(userInfo);
 
@@ -55,6 +60,8 @@ Vue.prototype.setUserInfo = function (ret) {
 	uni.setStorageSync('headPic', userInfo.userHeadPic);
 	uni.setStorageSync('phoneNumber', userInfo.phoneNumber);
 	uni.setStorageSync('totalIntegral', userInfo.totalIntegral);
+	uni.setStorageSync('authority', userInfo.authority);
+	uni.setStorageSync('managerToken', userInfo.managerToken);
 };
 
 (Vue.prototype.editState = function (status, payStatus) {
@@ -121,6 +128,39 @@ Vue.prototype.getPrice = function (num, currency, noPrice, fixNum) {
 	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	return currency + ' ' + parts.join('.');
 };
+
+
+//判断浏览器是否是微信浏览器
+//微信浏览器中打开H5隐藏顶部导航方法
+Vue.prototype.hidePageNavInWechatBrowser = () => {
+	//#ifdef H5
+	if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) ==
+		"micromessenger") {
+		let pageNav = document.getElementsByTagName("uni-page-head");
+		if (pageNav && pageNav[0]) {
+			pageNav[0].style.display = "none";
+		};
+		return true
+	}
+	//#endif
+	return false;
+};
+
+
+Vue.prototype.setCopyData = function(text) {
+		uni.setClipboardData({
+			data: text, //要被复制的内容
+			success: () => {
+				//复制成功的回调函数
+				uni.showToast({
+					//提示
+					title: '复制成功',
+					icon: 'none',
+				});
+			},
+		});
+},
+
 
 App.mpType = 'app';
 

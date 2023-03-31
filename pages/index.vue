@@ -238,6 +238,52 @@ export default {
 		this.indexOrSortDataGet();
 		// this.getDiscountList();
 	},
+	// 分享好友
+	onShareAppMessage(res) {
+		this.share.path = '/pages/index';
+		return {
+			title: this.share.title,
+			path: this.share.path,
+			imageUrl: this.share.imageUrl,
+			desc: this.share.desc,
+			content: this.share.content,
+			success: (res) => {
+				uni.showToast({
+					title: '分享成功',
+					icon: 'none',
+				});
+			},
+			fail: (res) => {
+				uni.showToast({
+					title: '分享失败',
+					icon: 'none',
+				});
+			},
+		};
+	},
+	// 分享朋友圈
+	onShareTimeline(res) {
+		this.share.path = '/pages/index';
+		return {
+			title: this.share.title,
+			path: this.share.path,
+			imageUrl: this.share.imageUrl,
+			desc: this.share.desc,
+			content: this.share.content,
+			success: (res) => {
+				uni.showToast({
+					title: '分享成功',
+					icon: 'none',
+				});
+			},
+			fail: (res) => {
+				uni.showToast({
+					title: '分享失败',
+					icon: 'none',
+				});
+			},
+		};
+	},
 	computed: {
 		searchTop() {
 			return (menuBtnInfo) => {
@@ -305,7 +351,6 @@ export default {
 		async indexOrSortDataGet() {
 			const { data: res } = await Api.indexOrSortDataGet(0);
 			if (res.code == 200) {
-				console.log(res.data);
 				if (res.data && res.data.length) {
 					// 轮播
 					res.data
@@ -415,7 +460,7 @@ export default {
 		},
 
 		// 跳转关联 relationType 0 产品 1设计图 2自定义网址 3设计师
-		goRelationType(item = {}, item1 = {}) {
+		goRelationType(item, item1 = {}) {
 			if (item.relationType == 0 && item1.id) {
 				// 到产品
 				uni.navigateTo({ url: `/pauliana/jewelryDetails?id=${item1.id}` });

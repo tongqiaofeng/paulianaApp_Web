@@ -18,6 +18,7 @@
 				:focus="focusStatus"
 				placeholder-class="search-placeholder"
 				placeholder="产品/品牌"
+				@confirm="confirmSearch"
 			/>
 			<image
 				class="del-icon"
@@ -220,9 +221,8 @@ export default {
 		};
 	},
 	onLoad(options) {
-		this.productLabelListGet();
 		if (!Object.keys(options).length) {
-			// 搜索
+			// 无参数
 			let searchHistory = [];
 			if (storage.get('search_history')) {
 				searchHistory = storage.get('search_history');
@@ -230,6 +230,7 @@ export default {
 			this.searchHistory = searchHistory;
 			this.getRecommendProductList();
 		} else {
+			// 有参数
 			if (options.brandSeries) {
 				this.brandSeries = options.brandSeries;
 				this.searchStatus = 'brandSeries';
@@ -248,7 +249,10 @@ export default {
 				this.focusStatus = false;
 				this.keywords = options.tag;
 			}
+			this.getSearchResult();
 		}
+
+		this.productLabelListGet();
 	},
 	methods: {
 		// 推荐产品
@@ -264,6 +268,7 @@ export default {
 		},
 		onSearchClick(keyword) {
 			this.keywords = keyword;
+			this.confirmSearch();
 		},
 
 		// 搜索数据
@@ -291,7 +296,8 @@ export default {
 				setTimeout(() => {
 					this.scrollTop++;
 				}, 500);
-				this.searchList = [...this.searchList, ...data.list];
+				if (this.currentPage == 1) this.searchList = data.list;
+				else this.searchList = [...this.searchList, ...data.list];
 			}
 		},
 
@@ -346,6 +352,7 @@ export default {
 		},
 		clearKeywords() {
 			this.keywords = '';
+			// this.getRecommendProductList();
 		},
 		// 返回事件
 		goBack() {
@@ -382,6 +389,21 @@ export default {
 			this._resetSearchParams();
 			this.getSearchResult();
 		},
+		// 点击完成
+		confirmSearch() {
+			if (this.keywords) {
+				this.searchStatus = 'keyword';
+				this.timer && clearTimeout(this.timer);
+				this.timer = setTimeout(() => {
+					this.navbar = '综合';
+					this.sort = 0;
+					this.searchList = [];
+					this.loadStatus = false;
+					this._saveSearchHistory(this.keywords);
+					this.getSearchResult();
+				}, 200);
+			}
+		},
 		// 存储搜索历史
 		_saveSearchHistory(keyword) {
 			let data = [];
@@ -389,7 +411,7 @@ export default {
 				data = storage.get('search_history');
 			}
 			if (data.indexOf(keyword) == -1) {
-				data.push(keyword);
+				data.unshift(keyword);
 			}
 			this.searchHistory = data;
 			storage.set('search_history', data);
@@ -426,18 +448,7 @@ export default {
 	},
 	watch: {
 		keywords(value) {
-			if (value) {
-				this.searchStatus = 'keyword';
-				this.timer && clearTimeout(this.timer);
-				this.timer = setTimeout(() => {
-					this.navbar = '综合';
-					this.sort = 0;
-					this.searchList = [];
-					this.loadStatus = false;
-					this._saveSearchHistory(value);
-					this.getSearchResult();
-				}, 200);
-			} else {
+			if (!value) {
 				this.searchStatus = '';
 				let searchHistory = [];
 				if (storage.get('search_history')) {

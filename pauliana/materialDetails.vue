@@ -18,18 +18,9 @@
 				</view>
 			</view>
 
-			<view class="price-container" v-if="materialDetails.tagPrice != 0">
-				<view>
-					<text style="font-size: 34rpx">{{formatNumberRgx(materialDetails.discountPrice)}}</text>
-					<text v-if="materialDetails.isVipProduct == 1"
-						style="margin-left: 8rpx;font-weight: normal;">会员价</text>
-				</view>
-				<text v-if="materialDetails.isVipProduct == 1">
-					<text
-						style="margin-left: 18rpx;font-size: 24rpx;color: #AAADB2;text-decoration: line-through;">{{'￥' + 
-				    formatNumberRgx(materialDetails.tagPrice)
-				  }}</text>
-				</text>
+			<view class="price-container row" style="justify-content: space-between;" v-if="materialDetails.tagPrice != 0">
+				<text style="font-size: 34rpx">单价：{{getPrice(materialDetails.tagPrice, '￥', '', 0)}}</text>
+				<text v-if="materialDetails.weight == 0" style="color: #171D26;font-weight: normal;">库存：{{materialDetails.surplusNumber}}</text>
 			</view>
 
 			<view class="price-container" v-else>
@@ -72,113 +63,112 @@
 				</view>
 			</view>
 		</uni-popup>
-
-		<view class="product-parameter" style="padding: 0 0 160rpx">
-			<view class="parameter">宝石详情</view>
-			<image style="vertical-align: bottom; width: 750rpx" v-if="imgSrc2[0]" :src="imgSrc2[0]" mode="widthFix">
-			</image>
-
+		
+		<uni-segmented-control v-if="tabItems.length > 1" style="background-color: #ffffff;padding-bottom: 10rpx;" :current="tabCurrent"
+			:values="tabItems" styleType="text" activeColor="#000000" @clickItem="onClickTabItem">
+		</uni-segmented-control>
+		
+		
+		<view v-if="tabCurrent == 0" class="product-parameter" style="padding: 0 0 160rpx">
+			
 			<view class="parameter-main">
-				<view class="title">
-					宝石参数
+				<view v-if="tabItems.length == 1">
+					<view class="title"> 裸石参数 </view>
+					<view class="line"></view>
 				</view>
-				<view class="line"></view>
 				<view class="parameter-main-container">
-					<view class="container-every">
-						<view class="title">
-							宝石名称
-						</view>
-						<view class="content">
-							{{materialDetails.productName}}
-						</view>
+					<view class="container-every" v-if="materialDetails.storageName">
+						<view class="title"> 库存地 </view>
+						<view class="content"> {{materialDetails.storageName}} </view>
 					</view>
-					<view class="container-every" v-if="materialDetails.productType">
-						<view class="title">
-							类型
-						</view>
-						<view class="content">
-							{{materialDetails.productType}}
-						</view>
+					<view class="container-every" @longpress="copyItem(materialDetails.productNumber)">
+						<view class="title"> 编号 </view>
+						<view class="content"> {{materialDetails.productNumber}} </view>
 					</view>
 					<view class="container-every" v-if="materialDetails.weight > 0.0">
-						<view class="title">
-							重量
-						</view>
-						<view class="content">
-							{{materialDetails.weight + '' + materialDetails.chargeUnit}}
-						</view>
+						<view class="title"> 数量 </view>
+						<view class="content"> {{materialDetails.surplusNumber}} </view>
 					</view>
-					<view class="container-every" v-if="materialDetails.productArea">
-						<view class="title">
-							产地
-						</view>
-						<view class="content">
-							{{materialDetails.productArea}}
-						</view>
+					<view class="container-every" v-if="materialDetails.weight > 0.0">
+						<view class="title"> 重量 </view>
+						<view class="content"> {{materialDetails.weight + '' + materialDetails.chargeUnit}} </view>
 					</view>
-					<view class="container-every" v-if="materialDetails.shape">
-						<view class="title">
-							形状
-						</view>
-						<view class="content">
-							{{materialDetails.shape}}
-						</view>
-					</view>
-					<view class="container-every" v-if="materialDetails.billNumber">
-						<view class="title">
-							产地
-						</view>
-						<view class="content">
-							{{materialDetails.billNumber}}
-						</view>
-					</view>
-					<view class="container-every" v-if="materialDetails.color">
-						<view class="title">
-							颜色
-						</view>
-						<view class="content">
-							{{materialDetails.color}}
-						</view>
-					</view>
-					<view class="container-every" v-if="materialDetails.size">
-						<view class="title">
-							尺寸
-						</view>
-						<view class="content">
-							{{materialDetails.size}}
-						</view>
-					</view>
-					<view class="container-every" v-if="materialDetails.paired">
-						<view class="title">
-							配对
-						</view>
-						<view class="content">
-							{{materialDetails.paired}}
-						</view>
-					</view>
-					<view class="container-every" v-if="materialDetails.quality">
-						<view class="title">
-							品质
-						</view>
-						<view class="content">
-							{{materialDetails.quality}}
-						</view>
+					<view class="container-every" v-if="materialDetails.quality" @longpress="copyItem(materialDetails.quality)">
+						<view class="title"> 品质 </view>
+						<view class="content"> {{materialDetails.quality}} </view>
 					</view>
 					<view class="container-every" v-if="materialDetails.subsection">
-						<view class="title">
-							品质细分
-						</view>
-						<view class="content">
-							{{materialDetails.subsection}}
+						<view class="title"> 品质细分 </view>
+						<view class="content"> {{materialDetails.subsection}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.productArea">
+						<view class="title"> 产地 </view>
+						<view class="content"> {{materialDetails.productArea}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.color">
+						<view class="title"> 颜色 </view>
+						<view class="content"> {{materialDetails.color}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.shape">
+						<view class="title"> 形状 </view>
+						<view class="content"> {{materialDetails.shape}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.size" @longpress="copyItem(materialDetails.size)">
+						<view class="title"> 尺寸 </view>
+						<view class="content"> {{materialDetails.size}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.paired">
+						<view class="title"> 配对 </view>
+						<view class="content"> {{materialDetails.paired}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.boxNumber">
+						<view class="title"> 盒子编号 </view>
+						<view class="content"> {{materialDetails.boxNumber}} </view>
+					</view>
+					
+					<view v-if="materialDetails.certs">
+						<view v-if="materialDetails.certs.length > 0" class="container-every">
+							<view class="title"> 证书编号 </view>
+							<view class="content">
+								<view v-for="(cert, index) in materialDetails.certs" :key="index">
+									<navigator :url="'./materialDetails?productNumber=' + cert">
+										{{ cert }}
+									</navigator>
+								</view>
+							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-
-			<view v-for="(item, index) in imgSrc2" :key="index" @click="imagePreview2(index)">
-				<image style="vertical-align: bottom; width: 750rpx" v-if="item" :src="item" mode="widthFix"></image>
+		</view>
+		
+		<view v-if="tabCurrent == 1" class="product-parameter" style="padding: 0 0 160rpx">
+			<view class="parameter-main">
+				<view class="parameter-main-container">
+					<view class="container-every" v-if="materialDetails.unitPrice > 0.0">
+						<view class="title"> 单价 </view>
+						<view class="content"> {{getPrice(materialDetails.unitPrice, materialDetails.currency, '/', 0)}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.totalPrice > 0.0">
+						<view class="title"> 总价 </view>
+						<view class="content"> {{getPrice(materialDetails.totalPrice, materialDetails.currency, '/', 0)}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.totalHkPrice > 0.0">
+						<view class="title"> 总价港币 </view>
+						<view class="content"> {{getPrice(materialDetails.totalHkPrice, 'HKD', '/', 0)}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.agentPrice > 0.0">
+						<view class="title"> 代理单价 </view>
+						<view class="content"> {{getPrice(materialDetails.agentPrice, 'CNY', '/', 0)}} </view>
+					</view>
+					<view class="container-every" v-if="materialDetails.counterLowestSellPrice > 0.0">
+						<view class="title"> 最低销售单价 </view>
+						<view class="content"> {{getPrice(materialDetails.counterLowestSellPrice, 'CNY', '/', 0)}} </view>
+					</view>
+				</view>
 			</view>
 		</view>
+
 
 		<view class="product-bottom">
 			<view class="bottom-left">
@@ -202,10 +192,10 @@
 				</view>
 			</view>
 
-			<view class="bottom-right">
+			<!-- <view class="bottom-right">
 				<view class="add-cart" @click="sureOrder(0)">加入购物车</view>
 				<view class="buy-button" @click="sureOrder(1)">立即购买</view>
-			</view>
+			</view> -->
 		</view>
 		<uni-popup ref="numPopup" type="bottom">
 			<view class="num-popup-container">
@@ -287,6 +277,9 @@
 					content: "",
 				},
 				orderImg: "",
+				
+				tabItems: ["裸石详情"],
+				tabCurrent: 0,
 
 				addType: 0,
 				productType: null,
@@ -447,6 +440,11 @@
 					});
 				}
 			},
+			onClickTabItem(e) {
+				if (this.tabCurrent != e.currentIndex) {
+					this.tabCurrent = e.currentIndex;
+				}
+			},
 			closePopup() {
 				this.$refs.numPopup.close();
 			},
@@ -518,12 +516,11 @@
 					title: "加载中......",
 				});
 				let url = "";
-				if (this.detailId > 0) url = "/jewelleryInfo?id=" + this.detailId;
-				else url = "/jewelleryInfo?productNumber=" + this.productNumber;
+				if (this.detailId > 0) url = "/productOrMaterialInfo?productId=" + this.detailId;
+				else url = "/productOrMaterialInfo?productNumber=" + this.productNumber;
 
 				uni.request({
-					url: this.$baseUrl + "/productOrMaterialInfo?productId=" + this.detailId +
-						"&type=2",
+					url: this.$baseUrl + url + "&type=2",
 					header: {
 						"content-type": "application/json",
 						token: uni.getStorageSync("token"),
@@ -583,16 +580,28 @@
 								}
 							}
 						}
+						
+						//证书
+						this.materialDetails.certs = [];
+						let certs = [];
+						if(this.materialDetails.certificateNumber){
+							if (this.materialDetails.certificateNumber.indexOf(",") > 0)
+							  certs = this.materialDetails.certificateNumber.split(",");
+							else certs = this.materialDetails.certificateNumber.split("，");
+						}
+						for (let i = 0; i < certs.length; ++i) {
+						  let tmp = certs[i].trim();
+						  if (tmp.length > 0) this.materialDetails.certs.push(tmp);
+						}
 
-						// this.materialDetails.certs = [];
-						// let certs = [];
-						// if (this.materialDetails.certificateNumber.indexOf(",") > 0)
-						// 	certs = this.materialDetails.certificateNumber.split(",");
-						// else certs = this.materialDetails.certificateNumber.split("，");
-						// for (let i = 0; i < certs.length; ++i) {
-						// 	let tmp = certs[i].trim();
-						// 	if (tmp.length > 0) this.materialDetails.certs.push(tmp);
-						// }
+						//其他权限
+						if(this.materialDetails.agentPrice || this.materialDetails.counterLowestSellPrice){
+							this.tabItems = ['裸石详情', '价格'];
+						}
+						
+						setTimeout(() => {
+						  this.scrollTop++;
+						}, 500);
 
 						this.initOk = true;
 					},
@@ -609,6 +618,19 @@
 				uni.previewImage({
 					current: index,
 					urls: this.imgSrc2,
+				});
+			},
+			copyItem(src){
+				uni.setClipboardData({
+					data: src, //要被复制的内容
+					success: () => {
+						//复制成功的回调函数
+						uni.showToast({
+							//提示
+							title: "复制成功",
+							icon: "none",
+						});
+					},
 				});
 			},
 		},
@@ -628,7 +650,7 @@
 
 		.price-container {
 			margin-top: 56rpx;
-			margin-bottom: 96rpx;
+			margin-bottom: 56rpx;
 			display: flex;
 			align-items: center;
 			font-size: 22rpx;
@@ -742,7 +764,7 @@
 		}
 
 		.product-parameter {
-			padding: 30rpx 40rpx;
+			padding: 0rpx 40rpx;
 			text-align: left;
 
 			.parameter {
@@ -753,7 +775,7 @@
 			}
 
 			.parameter-main {
-				padding-top: 92rpx;
+				padding-top: 10rpx;
 				padding-bottom: 40rpx;
 				text-align: center;
 				background-color: #fff;

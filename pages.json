@@ -243,6 +243,13 @@
 							"titleView": false
 						}
 					}
+				},
+				{
+					"path": "privacy",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
 				}
 			]
 		},
@@ -337,6 +344,25 @@
 						"app-plus": {
 							"titleView": false
 						},
+						"enablePullDownRefresh": true
+					}
+				}
+			]
+		},
+		{
+			"root": "manage",
+			"pages": [
+				{
+					"path": "productList",
+					"style": {
+						"navigationBarTitleText": "成品查询",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "stoneList",
+					"style": {
+						"navigationBarTitleText": "裸石查询",
 						"enablePullDownRefresh": true
 					}
 				}

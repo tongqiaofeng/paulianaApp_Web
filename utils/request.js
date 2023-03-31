@@ -1,7 +1,7 @@
 // request请求
-// const API_HOST = 'http://192.168.0.164:8087/jewellery/wechat/api'
+const API_HOST = 'http://192.168.0.164:8087/jewellery/wechat/api';
 
-const API_HOST = 'https://hk.wistechx.cn/JewelleryMallApi';
+// const API_HOST = 'https://hk.wistechx.cn/JewelleryMallApi';
 
 export const api_host = API_HOST;
 

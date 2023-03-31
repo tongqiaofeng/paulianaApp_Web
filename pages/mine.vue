@@ -13,7 +13,7 @@
 						<view class="mine-nick">
 							<text style="font-size: 34rpx">PAULIANA</text>
 							<view v-if="token == '' || token == null" class="wechat-login">
-								<navigator url="/my/getUserMsg" hover-class="none">
+								<navigator url="/my/phoneLogin" hover-class="none">
 									微信登录
 								</navigator>
 							</view>
@@ -89,7 +89,28 @@
 			</button>
 		</view>
 
-		<view class="mine-product-list">
+		
+		<view v-if="authority.manage.show">
+			<view class="mine-third">
+				<view v-if="authority.manage.stoneStock" class="third-every" @click="goCorrespondingPage('../manage/stoneList')">
+					<image src="../static/imgs/mine/stone.png" mode="aspectFill"></image>
+					<text>裸石查询</text>
+				</view>
+				<view v-if="authority.manage.productStock" class="line"></view>
+				<view v-if="authority.manage.productStock" class="third-every" @click="goCorrespondingPage('../manage/productList')">
+					<image src="../static/imgs/mine/product.png" mode="aspectFill"></image>
+					<text>成品查询</text>
+				</view>
+				<view v-if="authority.manage.reportView" class="line"></view>
+				<button v-if="authority.manage.reportView" open-type="contact" :plain="true" class="serviceButton third-every">
+					<image src="../static/imgs/mine/reportview.png" mode="aspectFill"></image>
+					<text>报表查阅</text>
+				</button>
+			</view>
+			<view style="margin-top: 32rpx;height: 1rpx;"></view>
+		</view>
+		
+		<view v-else class="mine-product-list">
 			<view class="title"> 精选推荐 </view>
 			<view class="recommend-box">
 				<GoodsList :marginTop="0" :scrollTop="scrollTop" :goodsList="jewelryList" />
@@ -123,6 +144,7 @@
 				sessionKey: "",
 
 				jewelryList: [],
+				authority:'',
 			};
 		},
 		onLoad() {
@@ -139,6 +161,7 @@
 				this.headPic = uni.getStorageSync("headPic");
 				this.nick = uni.getStorageSync("nick");
 				this.integralNum = uni.getStorageSync("totalIntegral");
+				this.authority = uni.getStorageSync("authority");
 				this.getUserInfo();
 			}
 		},
@@ -191,6 +214,9 @@
 							this.nick = uni.getStorageSync("nick");
 							this.headPic = uni.getStorageSync("headPic");
 							this.token = uni.getStorageSync("token");
+							this.authority = uni.getStorageSync("authority");
+							
+							console.log('headPic', this.headPic)
 
 							uni.setStorageSync("userAddress", ret.data.data.recvAddress);
 						}
